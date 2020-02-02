@@ -79,10 +79,10 @@ body
   &-nav
     display: none
     flex-direction: column
-    width: 215px
+    width: 180px
     background-color: #000000
     position: absolute
-    right: -215px
+    right: -180px
     &__item
       color: #ffffff
       text-decoration: none
@@ -94,15 +94,18 @@ body
     // burger button styles and mobile navigation
     &--burger
       background-image: url(../img/burger.svg)
-      width: 25px
-      height: 25px
+      background-size: 100%
+      background-position: center
+      background-repeat: no-repeat
+      -webkit-appearance: none
+      width: 35px
+      height: 35px
+      display: block
       position: absolute
-      right: 20px
-      top: 20px
+      right: 15px
+      top: 15px
       outline: none
-      background-color: transparent
-      
-      &:after
+      &:before
         content: ''
         display: none
         position: fixed
@@ -113,8 +116,10 @@ body
         height: 100%
         opacity: 0.5
     &--burger:checked
-      right: 220px
-    &--burger:checked:after
+      right: 190px
+      top: 5px
+      background-image: url(../img/close.svg)
+    &--burger:checked:before
       display: block
     &--burger:checked + .header-nav
       display: flex
