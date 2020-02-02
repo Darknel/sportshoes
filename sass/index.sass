@@ -1,0 +1,121 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Asap:400,600,700&display=swap');
+// default container styles
+body
+  font-family: 'Asap', sans-serif
+  font-size: 14px
+  box-sizing: border-box
+// container default styles
+.container
+  min-width: 320px
+  max-width: 1200px
+  margin: auto
+// header styles
+.header
+  // header top styles
+  &-top
+    display: flex
+    justify-content: center
+    width: 100%
+    @media screen and ( min-width: 768px )
+      justify-content: space-between
+    // header top background color
+    &--bg
+      background-color: #000000
+  &-info
+    display: none
+    @media screen and ( min-width: 768px )
+      display: flex
+      justify-content: space-around
+      align-items: center
+      max-width: 400px
+      flex: 1
+    & a
+      color: #ffffff
+      text-decoration: none
+  &-account
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    @media screen and ( min-width: 768px )
+      max-width: 350px
+    &__item
+      min-height: 50px
+      background-color: #000000
+      border-left: 1px solid #f3f3f3
+      border-right: 1px solid #f3f3f3
+      border-top: none
+      border-bottom: none
+      outline: none
+      color: #ffffff
+      &:last-child
+        border-right: none
+      &:nth-child(2)
+        border: none
+      &--basket
+        display: none
+
+      &:hover
+        background-color: #ffffff
+        color: #000000
+        cursor: pointer
+        border-color: #000000
+        font-weight: 700
+  &__basket
+    background-image: url(../img/basket.png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    text-align: right
+    padding: 0 20%
+    &:hover
+      background-color: #000000
+    @media screen and ( min-width: 768px )
+      background-position: 50% 50%
+  // header main styles
+  &-main
+    position: relative
+    display: flex
+    justify-content: space-between
+  &-nav
+    display: none
+    flex-direction: column
+    width: 215px
+    background-color: #000000
+    position: absolute
+    right: -215px
+    &__item
+      color: #ffffff
+      text-decoration: none
+      padding: 15px
+      &:hover
+        cursor: pointer
+        background-color: #ffffff
+        color: #000000
+    // burger button styles and mobile navigation
+    &--burger
+      background-image: url(../img/burger.svg)
+      width: 25px
+      height: 25px
+      position: absolute
+      right: 20px
+      top: 20px
+      outline: none
+      background-color: transparent
+      
+      &:after
+        content: ''
+        display: none
+        position: fixed
+        background-color: #000000
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0.5
+    &--burger:checked
+      right: 220px
+    &--burger:checked:after
+      display: block
+    &--burger:checked + .header-nav
+      display: flex
+      right: 0
