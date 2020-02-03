@@ -170,15 +170,18 @@ body
         height: 100%
         opacity: 0.5
     &--burger:checked
+      position: absolute
       right: 190px
-      top: 5px
+      top: -20px
       background-image: url(../img/close.svg)
       z-index: 1
     &--burger:checked:before
       display: block
     &--burger:checked + .header-nav
       display: flex
+      position: absolute
       right: 0
+      top: -25px
       z-index: 1
   &__search
     cursor: pointer
@@ -198,8 +201,11 @@ body
       
 // search styles
 .search
+  display: none
   position: relative
   top: 150px
+  @media screen and ( min-width: 650px )
+    display: flex
   &-form
     &__input
       position: absolute

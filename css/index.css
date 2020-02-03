@@ -275,8 +275,9 @@ body {
 }
 
 .header-nav--burger:checked {
+  position: absolute;
   right: 190px;
-  top: 5px;
+  top: -20px;
   background-image: url(../img/close.svg);
   z-index: 1;
 }
@@ -289,7 +290,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
   right: 0;
+  top: -25px;
   z-index: 1;
 }
 
@@ -315,8 +318,17 @@ body {
 }
 
 .search {
+  display: none;
   position: relative;
   top: 150px;
+}
+
+@media screen and (min-width: 650px) {
+  .search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .search-form__input {
