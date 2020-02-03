@@ -12,6 +12,9 @@ body
   margin: auto
 // header styles
 .header
+  position: fixed
+  min-height: 150px
+  width: 100%
   // header top styles
   &-top
     display: flex
@@ -80,13 +83,14 @@ body
         border-color: #000000
         font-weight: 700
   &__basket
-    background-image: url(../img/basket.png)
+    background-image: url(../img/shopping-cart-white.svg)
     background-repeat: no-repeat
     background-position: 50% 50%
+    background-size: 25px 25px
     text-align: right
     padding: 0 20%
     &:hover
-      background-color: #000000
+      background-image: url(../img/shopping-cart.svg)
     @media screen and ( min-width: 768px )
       background-position: 50% 50%
   // header main styles
@@ -95,13 +99,12 @@ body
     display: flex
     justify-content: space-between
     margin: 25px 0
-    padding: 0 10px
+    padding: 0 0 0 10px
   &-nav
     display: none
     flex-direction: column
     width: 180px
     background-color: #000000
-    position: absolute
     right: -180px
     @media screen and ( min-width: 650px  )
       display: flex
@@ -151,8 +154,9 @@ body
       display: block
       position: absolute
       right: 15px
-      top: 15px
+      top: 10px
       outline: none
+      cursor: pointer
       @media screen and ( min-width: 650px )
         display: none
       &:before
@@ -169,8 +173,37 @@ body
       right: 190px
       top: 5px
       background-image: url(../img/close.svg)
+      z-index: 1
     &--burger:checked:before
       display: block
     &--burger:checked + .header-nav
       display: flex
       right: 0
+      z-index: 1
+  &__search
+    cursor: pointer
+    position: absolute
+    top: 15px
+    right: 70px
+    width: 25px
+    height: 25px
+    background-image: url(../img/search-black.svg)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: 25px 25px
+    border: none
+    background-color: transparent
+    @media screen and ( min-width: 650px )
+      display: none
+      
+// search styles
+.search
+  position: relative
+  top: 150px
+  &-form
+    &__input
+      position: absolute
+      background-image: url(../img/search-black.svg)
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: 25px 25px

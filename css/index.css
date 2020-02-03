@@ -12,6 +12,12 @@ body {
   margin: auto;
 }
 
+.header {
+  position: fixed;
+  min-height: 150px;
+  width: 100%;
+}
+
 .header-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,15 +137,16 @@ body {
 }
 
 .header__basket {
-  background-image: url(../img/basket.png);
+  background-image: url(../img/shopping-cart-white.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-size: 25px 25px;
   text-align: right;
   padding: 0 20%;
 }
 
 .header__basket:hover {
-  background-color: #000000;
+  background-image: url(../img/shopping-cart.svg);
 }
 
 @media screen and (min-width: 768px) {
@@ -157,7 +164,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 25px 0;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .header-nav {
@@ -168,7 +175,6 @@ body {
           flex-direction: column;
   width: 180px;
   background-color: #000000;
-  position: absolute;
   right: -180px;
 }
 
@@ -245,8 +251,9 @@ body {
   display: block;
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 10px;
   outline: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 650px) {
@@ -271,6 +278,7 @@ body {
   right: 190px;
   top: 5px;
   background-image: url(../img/close.svg);
+  z-index: 1;
 }
 
 .header-nav--burger:checked:before {
@@ -282,5 +290,40 @@ body {
   display: -ms-flexbox;
   display: flex;
   right: 0;
+  z-index: 1;
+}
+
+.header__search {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/search-black.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 25px 25px;
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 650px) {
+  .header__search {
+    display: none;
+  }
+}
+
+.search {
+  position: relative;
+  top: 150px;
+}
+
+.search-form__input {
+  position: absolute;
+  background-image: url(../img/search-black.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 25px 25px;
 }
 /*# sourceMappingURL=index.css.map */
