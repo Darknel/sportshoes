@@ -9,6 +9,7 @@ body {
 .container {
   min-width: 320px;
   max-width: 1200px;
+  width: 100%;
   margin: auto;
 }
 
@@ -331,11 +332,61 @@ body {
   }
 }
 
+.search-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .search-form__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: absolute;
   background-image: url(../img/search-black.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 25px 25px;
+  border: none;
+}
+
+@media screen and (min-width: 650px) {
+  .search-form__input {
+    position: relative;
+    background-image: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 0 20px;
+  }
+}
+
+.search-form__submit {
+  width: 65px;
+  height: 60px;
+  background-color: #000000;
+  border: none;
+  background-image: url(../img/search-white.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 25px 25px;
+}
+
+.search-category {
+  width: 165px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  border: none;
 }
 /*# sourceMappingURL=index.css.map */
