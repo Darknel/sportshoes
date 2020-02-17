@@ -449,6 +449,10 @@ input:hover, select:hover {
   padding: 50px 0;
 }
 
+.products-card {
+  margin: 20px 0;
+}
+
 .products-tabs {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
