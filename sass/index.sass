@@ -1,20 +1,17 @@
 // fonts
 @import url('https://fonts.googleapis.com/css?family=Asap:400,600,700&display=swap');
-// default container styles
+// default styles
 body
   font-family: 'Asap', sans-serif
   font-size: 14px
   box-sizing: border-box
-// container default styles
-.container
-  min-width: 320px
-  max-width: 1200px
-  width: 100%
-  margin: auto
+input,select 
+  &:hover
+    cursor: pointer
+    outline: none
+
 // header styles
 .header
-  position: fixed
-  min-height: 150px
   width: 100%
   // header top styles
   &-top
@@ -44,17 +41,19 @@ body
         width: 130%
         height: 3px
         background-color: #ffffff
-        -webkit-transform: translateY(15px) translateX(-10%) scale(0)
-        transform: translateY(15px) translateX(-10%) scale(0)
+        -webkit-transform: translateY(13px) translateX(-10%) scale(0)
+        transform: translateY(13px) translateX(-10%) scale(0)
         -webkit-transition: all 0.2s
         transition: all 0.2s
       &:hover
         cursor: pointer
+        color: #ffffff
+        text-decoration: none
         @media screen and ( min-width: 650px  )
           &::after
             display: block
-            -webkit-transform: translateY(15px) translateX(-10%) scale(1)
-            transform: translateY(15px) translateX(-10%) scale(1)
+            -webkit-transform: translateY(13px) translateX(-10%) scale(1)
+            transform: translateY(13px) translateX(-10%) scale(1)
   &-account
     width: 100%
     display: grid
@@ -71,7 +70,7 @@ body
       outline: none
       color: #ffffff
       &:last-child
-        border-right: none
+        border-right: 1px solid #ffffff
       &:nth-child(2)
         border: none
       &--basket
@@ -83,6 +82,7 @@ body
         cursor: pointer
         border-color: #000000
         font-weight: 700
+
   &__basket
     background-image: url(../img/shopping-cart-white.svg)
     background-repeat: no-repeat
@@ -94,125 +94,72 @@ body
       background-image: url(../img/shopping-cart.svg)
     @media screen and ( min-width: 768px )
       background-position: 50% 50%
-  // header main styles
-  &-main
-    position: relative
-    display: flex
-    justify-content: space-between
-    margin: 25px 0
-    padding: 0 0 0 10px
-  &-nav
-    display: none
-    flex-direction: column
-    width: 180px
-    background-color: #000000
-    right: -180px
-    @media screen and ( min-width: 650px  )
-      display: flex
-      flex-direction: row
-      position: relative
-      right: 0
-      top: 0
-      width: auto
-      background-color: transparent
-    &__item
-      color: #ffffff
-      text-decoration: none
-      padding: 15px
-      @media screen and ( min-width: 650px  )
-        color: #000000
-      @media screen and ( min-width: 720px  )
-        font-size: 18px
-      &::after
+// header navbar styles
+.navbar-light
+  .navbar-toggle-search
+    margin-right: 10px
+    background: url(../img/search-black.svg) center no-repeat
+    width: 1.6rem
+    height: 1.6rem
+    @media screen and ( min-width: 768px )
+      display: none
+  .navbar-toggler
+    border: none
+    outline: none
+    color: #000000
+  .navbar-toggler-icon
+    background-image: url(../img/burger.svg)
+  .navbar-collapse
+    text-align: center
+  
+  .navbar-nav
+    .nav-item
+      @media screen and ( min-width: 768px )
+        margin-left: 10px
+        margin-right: 10px
+    // Link custom styles
+    .nav-link
+      color: #000000
+      &:hover
+        cursor: pointer
+        color: #ffffff
+        background-color: #000000
+      // Link custom underline
+      &:after
         content: ''
         position: relative
         display: block
         width: 130%
         height: 3px
         background-color: #000000
-        -webkit-transform: translateY(15px) translateX(-10%) scale(0)
-        transform: translateY(15px) translateX(-10%) scale(0)
+        -webkit-transform: translateY(29px) translateX(-10%) scale(0)
+        transform: translateY(29px) translateX(-10%) scale(0)
         -webkit-transition: all 0.2s
         transition: all 0.2s
-      &:hover
-        cursor: pointer
-        background-color: #ffffff
-        color: #000000
-        @media screen and ( min-width: 650px  )
+      @media screen and ( min-width: 769px )
+        font-size: 0.9rem
+        line-height: 22px
+        &:hover
+          color: #000000
+          background-color: transparent
           &::after
-            display: block
-            -webkit-transform: translateY(15px) translateX(-10%) scale(1)
-            transform: translateY(15px) translateX(-10%) scale(1)
-    // burger button styles and mobile navigation
-    &--burger
-      background-image: url(../img/burger.svg)
-      background-size: 100%
-      background-position: center
-      background-repeat: no-repeat
-      -webkit-appearance: none
-      width: 35px
-      height: 35px
-      display: block
-      position: absolute
-      right: 15px
-      top: 10px
-      outline: none
-      cursor: pointer
-      @media screen and ( min-width: 650px )
-        display: none
-      &:before
-        content: ''
-        display: none
-        position: fixed
-        background-color: #000000
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        opacity: 0.5
-    &--burger:checked
-      position: absolute
-      right: 190px
-      top: -20px
-      background-image: url(../img/close.svg)
-      z-index: 1
-    &--burger:checked:before
-      display: block
-    &--burger:checked + .header-nav
-      display: flex
-      position: absolute
-      right: 0
-      top: -25px
-      z-index: 1
-  &__search
-    cursor: pointer
-    position: absolute
-    top: 15px
-    right: 70px
-    width: 25px
-    height: 25px
-    background-image: url(../img/search-black.svg)
-    background-repeat: no-repeat
-    background-position: 50% 50%
-    background-size: 25px 25px
-    border: none
-    background-color: transparent
-    @media screen and ( min-width: 650px )
-      display: none
-      
+            -webkit-transform: translateY(29px) translateX(-10%) scale(1)
+            transform: translateY(29px) translateX(-10%) scale(1)
+      @media screen and ( min-width: 992px )
+        font-size: 1.2rem
 // search styles
 .search
+  background-color: #000000
   display: none
   position: relative
-  top: 150px
-  @media screen and ( min-width: 650px )
+  @media screen and ( min-width: 768px )
     display: flex
   &-form
     width: 100%
     display: flex
     flex-direction: row
     justify-content: space-between
-    &__input
+    &__search
       display: flex
       flex: 1
       position: absolute
@@ -221,6 +168,7 @@ body
       background-position: 50% 50%
       background-size: 25px 25px
       border: none
+      outline: none
       @media screen and ( min-width: 650px )
         position: relative
         background-image: none
@@ -232,13 +180,89 @@ body
       height: 60px
       background-color: #000000
       border: none
+      border-right: 1px solid #ffffff
+      border-left: 1px solid #000000
       background-image: url(../img/search-white.svg)
       background-repeat: no-repeat
       background-position: 50% 50%
       background-size: 25px 25px
+      &:hover
+        background-color: #ffffff
+        background-image: url(../img/search-black.svg)
+        border: 1px solid #000000
   &-category
     width: 165px
     height: 60px
     background-color: #000
     color: #fff
     border: none
+    border-left: 1px solid #ffffff
+    padding: 0 20px
+    outline: none
+
+//carousel settings
+.carousel
+  padding: 0 16px
+.carousel-indicators li
+  width: 8px
+  height: 8px
+  border-radius: 50%
+// Trending
+.caption
+  margin-bottom: 50px
+  font-size: 2rem
+  text-align: center
+  @media screen and ( min-width: 576px  )
+    text-align: left
+.bg-grey
+  background-color: #f5f5f5
+.trending
+  margin: 50px 0
+  padding: 50px 0
+  &-wrap
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @media screen and ( min-width: 576px  )
+      flex-direction: row
+  &-card
+    position: relative
+    max-width: 100%
+    margin: 20px 0
+    @media screen and ( min-width: 576px )
+      max-width: 48%
+    &-body
+      display: flex
+      position: absolute
+      bottom: 0px
+      left: 0px
+      background-color: rgba(0,0,0,.5)
+      width: 100%
+      height: 100%
+      padding: 20px
+      flex-direction: column
+      justify-content: flex-end
+      @media screen and ( max-width: 576px )
+        padding: 50px
+      @media screen and ( min-width: 768px )
+        display: none
+        
+    &-title
+      color: #fff
+      font-size: 2rem
+    &-btn
+      border: none
+      border-radius: 18px
+      padding: 8px 20px
+      max-width: 90px
+      &:hover
+        background-color: darken(#ffffff, 20%)
+  & a
+    z-index: 1
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    &:hover ~ .trending-card-body
+      display: flex
