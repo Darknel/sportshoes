@@ -491,6 +491,14 @@ input:hover, select:hover {
 }
 
 .popular-carousel .card {
-  min-width: 340px;
+  width: 100%;
+  margin: 0 10px;
+  min-width: 280px;
+}
+
+@media screen and (min-width: 768px) {
+  .popular-carousel .card {
+    min-width: 470px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
