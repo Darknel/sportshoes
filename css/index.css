@@ -449,8 +449,24 @@ input:hover, select:hover {
   padding: 50px 0;
 }
 
+.products-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .products-card {
-  margin: 20px 0;
+  max-width: 260px;
+  margin: 10px auto;
 }
 
 .products-tabs {
@@ -459,5 +475,22 @@ input:hover, select:hover {
           justify-content: center;
   margin-bottom: 50px;
   border: none;
+}
+
+.products-tabs-link {
+  color: #000;
+  font-size: 2rem;
+}
+
+.popular-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.popular-carousel .card {
+  min-width: 340px;
 }
 /*# sourceMappingURL=index.css.map */

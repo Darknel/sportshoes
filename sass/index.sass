@@ -271,9 +271,26 @@ input,select
 .products
   background-color: #f5f5f5
   padding: 50px 0
+  &-wrapper
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    justify-content: space-between
   &-card
-    margin: 20px 0
+    max-width: 260px
+    margin: 10px auto
 .products-tabs
   justify-content: center
   margin-bottom: 50px
   border: none
+  &-link
+    color: #000
+    font-size: 2rem
+
+// Popular
+.popular-carousel
+  display: flex
+  overflow: auto
+  white-space: nowrap
+  .card
+    min-width: 340px
