@@ -1,0 +1,98 @@
+[
+    {
+        "id": "1",
+        "badge": "-25%",
+        "newPrice": "45.00",
+        "oldPrice": "60.00",
+        "price": "60.00",
+        "gender": "men",
+        "title": "Converse Breakpoint",
+        "image": "converse-breakpoint.png",
+        "description": "Converse Breakpoint Suede Blue",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "2",
+        "badge": "",
+        "newPrice": "",
+        "oldPrice": "",
+        "price": "55.00",
+        "gender": "men",
+        "title": "Converse CT All Star 2",
+        "image": "converse-ct-all-star.png",
+        "description": "Converse CT All Star 2",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "3",
+        "badge": "-25%",
+        "newPrice": "60.00",
+        "oldPrice": "80.00",
+        "price": "80.00",
+        "gender": "men",
+        "title": "Adidas Pure Boost Chill",
+        "image": "adidas-pure.png",
+        "description": "Adidas Pure Boost Chill",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "4",
+        "badge": "",
+        "newPrice": "",
+        "oldPrice": "",
+        "price": "50.00",
+        "gender": "men",
+        "title": "Puma Duplex W Casual",
+        "image": "puma-duplex-w.png",
+        "description": "Puma Duplex W Casual",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "5",
+        "badge": "-25%",
+        "newPrice": "",
+        "oldPrice": "90.00",
+        "price": "90.00",
+        "gender": "men",
+        "title": "Adidas Alphabounce 1M",
+        "image": "adidas-alphabounce.png",
+        "description": "Adidas Alphabounce 1M",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "6",
+        "badge": "-25%",
+        "newPrice": "50.00",
+        "oldPrice": "100.00",
+        "price": "100.00",
+        "gender": "men",
+        "title": "Asics GEL-Epirus",
+        "image": "asics-gel-apirus.png",
+        "description": "Asics GEL-Epirus",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "7",
+        "badge": "-25%",
+        "newPrice": "",
+        "oldPrice": "40.00",
+        "price": "40.00",
+        "gender": "men",
+        "title": " Adidas Originals Courtvantage Mesh",
+        "image": "adias-originals.png",
+        "description": " Adidas Originals Courtvantage Mesh",
+        "idNumber": "#1672342"
+    },
+    {
+        "id": "8",
+        "badge": "-25%",
+        "newPrice": "",
+        "oldPrice": "80.00",
+        "price": "80.00",
+        "gender": "men",
+        "title": "Adidas Originals Climacool 1",
+        "image": "adias-originals-climaool.png",
+        "description": "Adidas Originals Climacool 1",
+        "idNumber": "#1672342"
+    }
+]

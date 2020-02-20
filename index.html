@@ -8,6 +8,7 @@
 	<title>Sportshoes</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -24,20 +25,15 @@
 				<div class="header-account">
 					<button class="header-account__item">Login</button>
 					<button class="header-account__item">Register</button>
-					<button class="header-account__item header__basket" type="button" id="user-card" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">
-						<span class="header-account__item--basket">$465.00 4 Items</span>
+					<button class="header-account__item header__basket openCartLink" type="button" id="user-card"
+						data-toggle="modal" data-target="#modal-cart">
+						<span id="cart-badge" class="badge badge-light"></span>
 					</button>
-					<div class="dropdown-menu" aria-labelledby="user-card">
-						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="#">Your cart</a>
-						<a class="dropdown-item" href="#">Settings</a>
-					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-md navbar-light container">
-			<a class="navbar-brand " href="#"><img src="img/logo.png" alt="SportShoes main logo"></a>
+			<a class="navbar-brand " href="#"><img src="img/logo.svg" alt="SportShoes main logo"></a>
 			<button class="btn ml-auto navbar-toggle-search" type="button"></button>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,9 +109,9 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-	<section class="trending bg-grey">
+	<section class="trending trending-bg">
 		<div class="container">
-			<h2 class="trending-caption caption">Trending Now</h2>
+			<h2 class="trending-caption">Trending Now</h2>
 			<div class="trending-wrap">
 				<div class="trending-card">
 					<a href="#"></a>
@@ -137,9 +133,9 @@
 		</div>
 	</section>
 	<section class="popular container">
-		<h2 class="popular-caption caption">This Week's Picks</h2>
+		<h2 class="popular-caption">This Week's Picks</h2>
 		<div class="popular-carousel">
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -147,7 +143,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -155,7 +151,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -163,7 +159,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -171,7 +167,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -179,7 +175,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -187,7 +183,7 @@
 					<p class="card-text">$225</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="popular-card">
 				<img src="img/nike-air-vapormax.jpg" class="card-img-top" alt="Nike Air Vapomax 360">
 				<div class="card-body">
 					<h5 class="card-title">Nike Air Vapomax 360</h5>
@@ -196,7 +192,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="best-scrollbar"></div>
 	</section>
 	<main class="products">
 		<div class="container">
@@ -211,256 +206,79 @@
 					<a class="nav-link products-tabs-link" href="#">Top picks</a>
 				</li>
 			</ul>
-			<div class="products-wrapper">
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-				<div class="card products-card">
-					<div class="card-body">
-						<p>$45.00</p>
-						<p>$60.00</p>
-					</div>
-					<img src="img/converse-breakpoint.png" class="card-img-top" alt="Converse Breakpoint">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Men</li>
-						<li class="list-group-item">Converse Breakpoint</li>
-						<li class="list-group-item">Suede Blue</li>
-						<li class="list-group-item">#16378271</li>
-					</ul>
-				</div>
-			</div>
+			<div class="products-wrapper"></div>
 		</div>
 	</main>
-	<!--
-	
-	<main class="products">
-		<div class="container">
-			<nav class="products-nav">
-				<a href="#" class="products-nav__item">new</a>
-				<a href="#" class="products-nav__item">popular</a>
-				<a href="#" class="products-nav__item">top picks</a>
-			</nav>
-			<div class="products-grid">
-				<div class="products-grid__item">
-					<img src="img/converse-breakpoint.png" alt="Converse Breakpoint Suede Blue">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Converse Breakpoint Suede Blue</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/converse-ct-all-star.png" alt="Converse CT All Star II">
-					<div class="products-description">
-						<span class="products-description__gender">men/women</span><br>
-						<span class="products-description__name">Converse CT All Star II</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/adidas-pure.png" alt="Adidas Pure Boost Chill">
-					<div class="products-description">
-						<span class="products-description__gender">women</span><br>
-						<span class="products-description__name">Adidas Pure Boost Chill</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/puma-duplex-w.png" alt="Puma Duplex W Casual">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Puma Duplex W Casual</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/adidas-alphabounce.png" alt="Adidas Alphabounce 1M">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Adidas Alphabounce 1M</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/asics-gel-apirus.png" alt="Asics GEL-Epirus">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Asics GEL-Epirus</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/adias-originals.png" alt="Adidas Originals Courtvantage Mesh">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Adidas Originals Courtvantage Mesh</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-				<div class="products-grid__item">
-					<img src="img/adias-originals-climaool.png" alt="Adidas Originals Climacool 1">
-					<div class="products-description">
-						<span class="products-description__gender">men</span><br>
-						<span class="products-description__name">Adidas Originals Climacool 1</span><br>
-						<span class="products-description__id">#16378271</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-	<div class="brands">
-		<div class="container">
-			<nav class="brands-wrapper">
-				<a href="#">
-					<img src="img/adidas-logo.png" alt="Adidas Logo">
-				</a>
-				<a href="#">
-					<img src="img/nike-logo.png" alt="Nike Logo">
-				</a>
-				<a href="#">
-					<img src="img/puma-logo.png" alt="Puma Logo">
-				</a>
-				<a href="#">
-					<img src="img/asics-logo.png" alt="Asics Logo">
-				</a>
-				<a href="#">
-					<img src="img/new-balance-logo.png" alt="New Balance Logo">
-				</a>
-				<a href="#">
-					<img src="img/fila-logo.png" alt="Fila Logo">
-				</a>
-			</nav>
-		</div>
+	<div class="brands container">
+		<nav class="brands-wrapper">
+			<a href="#">
+				<img src="img/adidas-logo.png" alt="Adidas Logo">
+			</a>
+			<a href="#">
+				<img src="img/nike-logo.png" alt="Nike Logo">
+			</a>
+			<a href="#">
+				<img src="img/puma-logo.png" alt="Puma Logo">
+			</a>
+			<a href="#">
+				<img src="img/asics-logo.png" alt="Asics Logo">
+			</a>
+			<a href="#">
+				<img src="img/new-balance-logo.png" alt="New Balance Logo">
+			</a>
+			<a href="#">
+				<img src="img/fila-logo.png" alt="Fila Logo">
+			</a>
+		</nav>
 	</div>
+	<section class="help container">
+		<div class="help__item">
+			<h2 class="help__caption">Looking for help?</h2>
+			<span class="help__text">Have any questions or need help with order? Let us know!</span>
+		</div>
+		<button class="help__button">make an inquiry</button>
+	</section>
 	<div class="delivery">
-		<div class="container">
-			<div class="delivery-wrapp">
-				<img src="img/delivery-shiping.png" alt="Free shiping image"><br>
+		<div class="delivery-wrapper container">
+			<div class="delivery-item">
+				<img src="img/delivery-shiping.png" alt="Free shiping image">
 				<span>Free Shipping in Europe</span>
 			</div>
-			<div class="delivery-wrapp">
-				<img src="img/delivery-money-back.png" alt="Money Back Guarantee"><br>
+			<div class="delivery-item">
+				<img src="img/delivery-money-back.png" alt="Money Back Guarantee">
 				<span>Money Back Guarantee</span>
 			</div>
-			<div class="delivery-wrapp">
-				<img src="img/delivery-time.png" alt="24/7 Customer Support"><br>
+			<div class="delivery-item">
+				<img src="img/delivery-time.png" alt="24/7 Customer Support">
 				<span>24/7 Customer Support</span>
 			</div>
-			<div class="delivery-wrapp">
-				<img src="img/delivery-price.png" alt="Lowest Prices Guaranteed"><br>
+			<div class="delivery-item">
+				<img src="img/delivery-price.png" alt="Lowest Prices Guaranteed">
 				<span>Lowest Prices Guaranteed</span>
 			</div>
-			<div class="delivery-wrapp">
-				<img src="img/delivery-box.png" alt="Exclusive Items for Sportshold"><br>
+			<div class="delivery-item">
+				<img src="img/delivery-box.png" alt="Exclusive Items for Sportshold">
 				<span>Exclusive Items for Sportshold</span>
 			</div>
-			<div class="delivery-wrapp">
-				<img src="img/delivery-car.png" alt="5-Day Delivery in Europe"><br>
+			<div class="delivery-item">
+				<img src="img/delivery-car.png" alt="5-Day Delivery in Europe">
 				<span>5-Day Delivery in Europe</span>
 			</div>
-			<hr>
+			<hr class="delivery-hr">
 		</div>
 	</div>
 	<div class="links">
-		<div class="container">
+		<div class="links-wrapper container">
 			<ul class="links-contacts">
-				<li class="links-contacts__item ">
+				<li class="links-contacts__item links-contacts__item--tel">
 					<span class="links-contacts__caption">call us</span>
 					<a class="links-contacts__link" href="tel:+01234567890">0 (1234) 567 890</a>
 				</li>
-				<li class="links-contacts__item">
+				<li class="links-contacts__item links-contacts__item--email">
 					<span class="links-contacts__caption">email us</span>
 					<a class="links-contacts__link" href="mailto:hello@sportshold.com">hello@sportshold.com</a>
 				</li>
-				<li class="links-contacts__item">
+				<li class="links-contacts__item links-contacts__item--address">
 					<span class="links-contacts__caption">address</span>
 					<address>
 						<a class="links-contacts__link" href="#">40 Baria Sreet 133/2, NY, US</a>
@@ -468,7 +286,7 @@
 				</li>
 			</ul>
 			<div class="links-navigation">
-				<h3 class="links-navigation__caption">navigation</h3>
+				<p class="links-caption">navigation</p>
 				<nav class="links-nav">
 					<a class="links-nav__item" href="#">Home</a>
 					<a class="links-nav__item" href="#">About Us</a>
@@ -478,7 +296,7 @@
 				</nav>
 			</div>
 			<div class="links-categories">
-				<h3 class="links-categories__caption">categories</h3>
+				<p class="links-caption">categories</p>
 				<nav class="links-nav">
 					<a class="links-nav__item" href="#">Men</a>
 					<a class="links-nav__item" href="#">Women</a>
@@ -488,7 +306,7 @@
 				</nav>
 			</div>
 			<div class="links-sales">
-				<h3 class="links-sales__caption">sales</h3>
+				<p class="links-caption">sales</p>
 				<nav class="links-nav">
 					<a class="links-nav__item" href="#">New Arrivals</a>
 					<a class="links-nav__item" href="#">Most Popular</a>
@@ -497,7 +315,7 @@
 				</nav>
 			</div>
 			<div class="links-support">
-				<h3 class="links-support__caption">support</h3>
+				<p class="links-caption">support</p>
 				<nav class="links-nav">
 					<a class="links-nav__item" href="#">Shipping & Delivery</a>
 					<a class="links-nav__item" href="#">Return Policy</a>
@@ -509,8 +327,8 @@
 		</div>
 	</div>
 	<footer class="footer">
-		<div class="container">
-			<a class="footer__logo" href="#"><img src="img/logo.png" alt="Footer logo"></a>
+		<div class="footer-wrapp container">
+			<a class="footer__logo" href="#"><img src="img/logo.svg" alt="Footer logo"></a>
 			<p class="footer__rights">© 2020 SportShoes. All rights reserved.</p>
 			<nav class="footer__links footer-links">
 				<a class="footer-links__item" href="#"><img src="img/twitter.png" alt="twitter icon"> </a>
@@ -519,7 +337,79 @@
 				<a class="footer-links__item" href="#"><img src="img/youtube.png" alt="youtube icon"></a>
 			</nav>
 		</div>
-	</footer> -->
+	</footer>
+
+
+
+
+	<!-- Modal Product Info -->
+	<div class="modal fade" id="productInfoModal" tabindex="-1" role="dialog" aria-labelledby="productInfoLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="productInfoLabel">Product Info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<img class="card-img-top" src="" alt="">
+					<h4 class="card-title"></h4>
+					<p class="card-text"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary buy" data-id="id">Buy</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Cart -->
+	<div class="modal fade modal-cart" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="cartLabel">Shoping Cart</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="cart-product-list-container">
+					</div>
+					<hr>
+					<div class="container">
+						<form class="form-contacts">
+							<div class="form-group row">
+								<label for="client-name" class="col-4 col-form-label">Your name:</label>
+								<input class="form-control col-8" type="text" id="client-name" required>
+							</div>
+							<div class="form-group row">
+								<label for="client-email" class="col-4 col-form-label">Your email:</label>
+								<input class="form-control col-8" type="email" id="client-email" required>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Close</button> -->
+					<button class="btn btn-dark order btn-order">Checkout</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"></script>
@@ -529,6 +419,16 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="js/popular-slider.js"></script>
+
+
+	<script async src="js/alert-window.js"></script>
+	<script defer src="js/products-service.js"></script>
+	<script defer src="js/cart.js"></script>
+	<script defer src="js/product-list.js"></script>
+	<script defer src="js/index.js"></script>
 </body>
 
 </html>
